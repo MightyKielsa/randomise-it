@@ -13,23 +13,20 @@ export function randomFloat(min, max, decimal) {
 
 export function coinFlip() {
   const coin = Math.random();
-  if (coin > 0.5) {
-    return true;
-  }
+
   if (coin < 0.5) {
     return false;
-  }
-  if ((coin = 0.5)) {
-    return "Damn, it landed on its side, how unlucky";
+  } else {
+    return true;
   }
 }
 
-console.log(coinFlip());
+
 
 /*
 random int ✅
 random float ✅
-coin flip
+coin flip ✅
 random array
 random object
 
