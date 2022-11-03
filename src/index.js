@@ -21,12 +21,30 @@ export function coinFlip() {
   }
 }
 
+export function randomArr(length, min, max, decimal = 0) {
+  let arr = [];
+  if (decimal === 0) {
+    for (let i = 0; i < length; i++) {
+      arr.push(randomInt(min, max));
+    }
+  } else if (decimal > 0) {
+    for (let i = 0; i < length; i++) {
+      arr.push(randomFloat(min, max, decimal));
+    }
+  } else {
+    console.error("Please check decimal value. It should be a number or blank");
+  }
 
+  return arr;
+}
+
+console.log(randomArr(10, 1, 10));
 
 /*
 random int ✅
 random float ✅
 coin flip ✅
+random array
 random array
 random object
 
