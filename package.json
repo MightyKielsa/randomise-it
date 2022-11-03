@@ -1,6 +1,6 @@
 {
   "name": "randomise-it",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Randomises literally everything",
   "type": "module",
   "license": "MIT",
