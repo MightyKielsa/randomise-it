@@ -1,4 +1,14 @@
 {
   "name": "randomise-it",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "description": "Randomises literally everything",
+  "license": "MIT",
+  "repository": "MightyKielsa/randomise-it",
+  "main": "index.js",
+  "keywords": [
+    "random",
+    "npm",
+    "package",
+    "randomise"
+  ]
 }
