@@ -85,7 +85,7 @@ export function randomColor(isRgb = false) {
 }
 
 export function randomLetter(isUppercase = false) {
-  const letterArr = [
+  const lettersArr = [
     "a",
     "b",
     "c",
@@ -114,11 +114,155 @@ export function randomLetter(isUppercase = false) {
     "z",
   ];
 
+  let randLetter = lettersArr[randomInt(0, lettersArr.length)];
+
   if (isUppercase === false) {
+    return randLetter;
+  } else if (isUppercase === true) {
+    return randLetter.toUpperCase();
+  } else {
+    console.error(
+      "Please check isUppercase value. It should be a boolean or empty."
+    );
   }
 }
 
-console.log(randomColor("fasdfa"));
+export function randomString(
+  length,
+  hasNumbers = false,
+  hasSpecialChar = false
+) {
+  const lettersArr = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+  ];
+
+  const numbersArr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+  const specialCharArr = [
+    "!",
+    "“",
+    "#",
+    "$",
+    "%",
+    "&",
+    "'",
+    "(",
+    ")",
+    "*",
+    "+",
+    ",",
+    "-",
+    ".",
+    "/",
+    ":",
+    ";",
+    "<",
+    "=",
+    ">",
+    "?",
+    "@",
+    "[",
+    "\\",
+    "]",
+    "^",
+    "_",
+    "`",
+    "{",
+    "|",
+    "}",
+    "~",
+    '"',
+  ];
+
+  let arrOfArr = [lettersArr, numbersArr, specialCharArr];
+
+  // arrOfArr[randomInt(0, arrOfArr.length)][randomInt(0, arrOfArr.length)];
+
+  let string = "";
+
+  if (hasNumbers === false && hasSpecialChar === false) {
+    for (let i = 0; i < length; i++) {
+      string += arrOfArr[0][randomInt(0, arrOfArr[0].length)];
+    }
+  } else if (hasNumbers === true && hasSpecialChar === false) {
+    for (let i = 0; i < length; i++) {
+      let randNumber = randomInt(0, 2);
+      string += arrOfArr[randNumber][randomInt(0, arrOfArr[randNumber].length)];
+    }
+  } else if (hasNumbers === true && hasSpecialChar === true) {
+    for (let i = 0; i < length; i++) {
+      let randNumber = randomInt(0, 3);
+      string += arrOfArr[randNumber][randomInt(0, arrOfArr[randNumber].length)];
+    }
+  } else if (hasNumbers === false && hasSpecialChar === true) {
+    for (let i = 0; i < length; i++) {
+      let randNumber = randomBool() ? 0 : 2;
+      string += arrOfArr[randNumber][randomInt(0, arrOfArr[randNumber].length)];
+    }
+  } else {
+    console.error(
+      "Please check hasSpecialChar value. It should be a boolean or empty."
+    );
+  }
+
+  return string;
+}
+
+// export function randromPassword() {
+// }
+
+console.log(randomString(10, true, true));
 
 /*
 random int ✅
